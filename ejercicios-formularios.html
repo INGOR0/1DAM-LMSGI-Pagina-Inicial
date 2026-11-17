@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Formularios</title>
+</head>
+<body>
+    <a name="inicio"></a>
+    <h1>Índice</h1>
+    <ol>
+        <li><a href="#formulario1">Ejercicio 1</a></li>
+        <li><a href="#formulario2">Ejercicio 2</a></li>
+        <li><a href="#formulario3">Ejercicio 3</a></li>
+        <li><a href="#formulario4">Ejercicio 4</a></li>
+        <li><a href="#formulario5">Ejercicio 5</a></li>
+    </ol>
+    
+    <a name="formulario1"></a>
+    <h1>Ejercicio 1. Formulario de datos personales (básico)</h1>
+    <p>Crea un formulario para recoger nombre, apellidos, DNI, fecha de nacimiento, correo, teléfono, dirección, código postal y población.</p>
+    <p>Requisitos:</p>
+    <ul>
+        <li>Nombre y apellidos obligatorios.</li>
+        <li>Correo de tipo email.</li>
+        <li>DNI con ocho cifras y una letra mediante pattern.</li>
+        <li>Código postal de cinco cifras mediante pattern.</li>
+        <li>Todos los campos con label.</li>
+        <li>Botones Enviar y Limpiar.</li>
+    </ul>
+    <br><br>
+    <form id="ej1" action="" method="post">
+        <label for="ej1-nombre">Nombre:</label>
+        <input type="text" name="ej1-nombre" id="ej1-nombre" required>
+        
+        <br><br>
+        <label for="ej1-apellidos">Apellidos:</label>
+        <input type="text" name="ej1-apellidos" id="ej1-apellidos" required>
+        
+        <br><br>
+        <label for="ej1-dni">DNI:</label>
+        <input type="text" name="ej1-dni" id="ej1-dni" pattern="[0-9]{8}[A-Za-z]">
+
+        <br><br>
+        <label for="ej1-fechnac">Fecha de nacimiento:</label>
+        <input type="date" name="ej1-fechnac" id="ej1-fechnac">
+        
+        <br><br>
+        <label for="ej1-correo">Correo:</label>
+        <input type="email" name="ej1-correo" id="ej1-correo">
+
+
+        <br><br>
+        <label for="ej1-telefono">Teléfono:</label>
+        <input type="text" name="ej1-telefono" id="ej1-telefono">
+
+        <br><br>
+        <label for="ej1-direccion">Dirección:</label>
+        <input type="text" name="ej1-direccion" id="ej1-direccion">
+
+        <br><br>
+        <label for="ej1-postal">Código postal:</label>
+        <input type="text" name="ej1-postal" id="ej1-postal" pattern="[0-9]{5}">
+    
+        <br><br>
+        <label for="ej1-poblacion">Población:</label>
+        <input type="text" name="ej1-poblacion" id="ej1-poblacion">
+        
+        <br><br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+    </form>
+
+    
+    <br><br>
+    <hr>
+    <a name="formulario2"></a>
+    <h1>Ejercicio 2. Matrícula DAM (básico-intermedio)</h1>
+    <p>Crea un formulario de matrícula con datos personales, ciclo (DAM, DAW o ASIR), curso (primero o segundo), turno y modalidad.</p>
+    <p>Incluye una lista de módulos: Programación, Bases de datos, Lenguajes de marcas, Sistemas informáticos y Entornos de desarrollo.</p>
+    <p>Requisitos: fieldset, select, radio para (mañana/tarde), checkbox para módulos, campos obligatorios y botones de envío y limpieza. Debe aparecer el turno "mañana" seleccionado por defecto.</p>
+
+    <form id="ej2" action="" method="post">
+        <fieldset>
+            <legend>Datos personales</legend>
+
+            <label for="ej2-nombre">Nombre:</label>
+            <input required type="text" id="ej2-nombre" name="ej2-nombre">
+            
+            <br><br>
+            <label for="ej2-apellidos">Apellidos:</label>
+            <input required type="text" id="ej2-apellidos" name="ej2-apellidos">
+
+            <br><br>
+            <label for="ej2-fechnac">Fecha de nacimiento:</label>
+            <input required type="date" id="ej2-fechnac" name="ej2-fechnac">
+
+            <br><br>
+            <label for="ej2-dni">DNI:</label>
+            <input required type="text" id="ej2-dni" name="ej2-dni" pattern="[0-9]{8}[A-Za-z]">
+        </fieldset>
+
+        <br><br>
+        <fieldset>
+            <legend>Datos de matrícula</legend>
+
+            <label for="ej2-ciclo">Ciclo:</label>
+            <select required id="ej2-ciclo" name="ej2-ciclo">
+                <option value="">Selecciona un ciclo</option>
+                <option value="DAM">DAM</option>
+                <option value="DAW">DAW</option>
+                <option value="ASIR">ASIR</option>
+            </select>
+
+            <br><br>
+            <label for="ej2-curso">Curso:</label>
+            <select required id="ej2-curso" name="ej2-curso">
+                <option value="">Selecciona un curso</option>
+                <option value="Primero">Primero</option>
+                <option value="Segundo">Segundo</option>
+            </select>
+
+            <br><br>
+            <p>Turno:</p> <!-- p porque así funciona como título simple-->
+            <input type="radio" id="ej2-turnomanana" name="ej2-turno" value="manana" checked>
+            <label for="ej2-turnomanana">Mañana</label> <!-- label detrás porque queda mejor, es estándar -->
+        
+            <br><br>
+            <input type="radio" id="ej2-turnotarde" name="ej2-turno" value="tarde">
+            <label for="ej2-turnotarde">Tarde</label>
+
+            <br><br>
+            <p>Modalidad:</p> 
+            <input type="radio" id="ej2-modalidadpresencial" name="ej2-modalidad" value="presencial">
+            <label for="ej2-modalidadpresencial">Presencial</label> 
+        
+            <br><br>
+            <input type="radio" id="ej2-modalidaddistancia" name="ej2-modalidad" value="distancia">
+            <label for="ej2-modalidaddistancia">A distancia</label>
+        
+            <br><br>
+            <p>Módulos:</p>
+            <input type="checkbox" id="ej2-programacion" name="ej2-programacion">
+            <label for="ej2-programacion">Programación</label>
+            
+            <br><br>
+            <input type="checkbox" id="ej2-bbdd" name="ej2-bbdd">
+            <label for="ej2-bbdd">Bases de datos</label>
+
+            <br><br>
+            <input type="checkbox" id="ej2-lmsgi" name="ej2-lmsgi">
+            <label for="ej2-lmsgi">Lenguajes de marcas</label>
+
+            <br><br>
+            <input type="checkbox" id="ej2-sistemas" name="ej2-sistemas">
+            <label for="ej2-sistemas">Sistemas informáticos</label>
+        
+            <br><br>
+            <input type="checkbox" id="ej2-entornos" name="ej2-entornos">
+            <label for="ej2-entornos">Entornos de desarrollo</label>
+        </fieldset>
+
+        <br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+    </form>
+
+    <br><br>
+    <hr>
+    <a name="formulario3"></a>
+    <h1>Ejercicio 3. Reserva de una sala (intermedio)</h1>
+    <p>Recoge persona responsable, correo, departamento, fecha, hora de inicio y fin, asistentes, sala, equipamiento y observaciones.</p>
+    <p>Usa date, time, number (de 1 a 30), select, checkbox y textarea. Haz obligatorios los datos principales.</p>
+    
+    <br><br>
+    <form id="ej3" action="" method="post">
+        <label for="ej3-responsable">Persona responsable:</label>
+        <input required type="text" id="ej3-responsable" name="ej3-responsable">
+
+        <br><br>
+        <label for="ej3-correo">Correo:</label>
+        <input required type="email" id="ej3-correo" name="ej3-correo">
+
+        <br><br>
+        <label for="ej3-departamento">Departamento:</label>
+        <input required type="text" id="ej3-departamento" name="ej3-departamento">
+
+        <br><br>
+        <label for="ej3-fecha">Fecha:</label>
+        <input required type="date" id="ej3-fecha" name="ej3-fecha">
+
+        <br><br>
+        <label for="ej3-horainicio">Hora de inicio:</label>
+        <input required type="time" id="ej3-horainicio" name="ej3-horainicio">
+
+        <br><br>
+        <label for="ej3-horafin">Hora de fin:</label>
+        <input required type="time" id="ej3-horafin" name="ej3-horafin">
+
+        <br><br>
+        <label for="ej3-asistentes">Número de asistentes:</label>
+        <input required type="number" id="ej3-asistentes" name="ej3-asistentes" min="1" max="30">
+
+        <br><br>
+        <label for="ej3-sala">Sala:</label>
+        <select required id="ej3-sala" name="ej3-sala">
+            <option value="">Selecciona una sala</option>
+            <option value="sala1">Sala 1</option>
+            <option value="sala2">Sala 2</option>
+            <option value="sala3">Sala 3</option>
+        </select>
+
+        <br><br>
+        <p>Equipamiento:</p>
+        <input type="checkbox" id="ej3-proyector" name="ej3-proyector" value="proyector">
+        <label for="ej3-proyector">Proyector</label>
+
+        <br><br>
+        <input type="checkbox" id="ej3-pantalla" name="ej3-pantalla" value="pantalla">
+        <label for="ej3-pantalla">Pantalla</label>
+
+        <br><br>
+        <input type="checkbox" id="ej3-pizarra" name="ej3-pizarra" value="pizarra">
+        <label for="ej3-pizarra">Pizarra</label>
+
+        <br><br>
+        <input type="checkbox" id="ej3-videoconferencia" name="ej3-videoconferencia" value="videoconferencia">
+        <label for="ej3-videoconferencia">Equipo de videoconferencia</label>
+        
+        <br><br>
+        <label for="ej3-observaciones">Observaciones:</label>
+        <br><br>
+        <textarea id="ej3-observaciones" name="ej3-observaciones" rows="4" cols="50"></textarea>
+    
+        <br><br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+    </form>
+
+    <br><br>
+    <hr>
+    <a name="formulario4"></a>
+    <h1>Ejercicio 4. Inscripción a un curso (intermedio)</h1>
+    <p>Recoge nombre, correo, teléfono, fecha de nacimiento, curso, nivel, lenguajes conocidos, disponibilidad, experiencia y documentación adjunta.</p>
+    <p>Usa select, radio, checkbox, textarea y file. Limita el archivo a PDF mediante accept=".pdf".</p>
+
+    <br><br>
+    <form id="ej4" action="" method="post">
+        <label for="ej4-nombre">Nombre:</label>
+        <input required type="text" id="ej4-nombre" name="ej4-nombre">
+
+        <br><br>
+        <label for="ej4-correo">Correo:</label>
+        <input required type="email" id="ej4-correo" name="ej4-correo">
+
+        <br><br>
+        <label for="ej4-telefono">Teléfono:</label>
+        <input required type="text" id="ej4-telefono" name="ej4-telefono">
+
+        <br><br>
+        <label for="ej4-fechnac">Fecha de nacimiento:</label>
+        <input required type="date" id="ej4-fechnac" name="ej4-fechnac">
+
+        <br><br>
+        <label for="ej4-curso">Curso:</label>
+        <select required id="ej4-curso" name="ej4-curso">
+            <option value="">Selecciona un curso</option>
+            <option value="curso1">Curso 1</option>
+            <option value="curso2">Curso 2</option>
+            <option value="curso3">Curso 3</option>
+        </select>
+
+        <br><br>
+        <p>Nivel:</p>
+        <input type="radio" id="ej4-nivelbasico" name="ej4-nivel" value="basico">
+        <label for="ej4-nivelbasico">Básico</label>
+
+        <br><br>
+        <input type="radio" id="ej4-nivelintermedio" name="ej4-nivel" value="intermedio">
+        <label for="ej4-nivelintermedio">Intermedio</label>
+
+        <br><br>
+        <input type="radio" id="ej4-nivelavanzado" name="ej4-nivel" value="avanzado">
+        <label for="ej4-nivelavanzado">Avanzado</label>
+
+        <br><br>
+        <p>Lenguajes conocidos:</p>
+        <input type="checkbox" id="ej4-lenguaje1" name="ej4-python" value="python">
+        <label for="ej4-lenguaje1">Python</label>
+
+        <br><br>
+        <input type="checkbox" id="ej4-lenguaje2" name="ej4-java" value="java">
+        <label for="ej4-lenguaje2">Java</label>
+
+        <br><br>
+        <input type="checkbox" id="ej4-lenguaje3" name="ej4-javascript" value="javascript">
+        <label for="ej4-lenguaje3">JavaScript</label>
+
+        <br><br>
+        <input type="checkbox" id="ej4-lenguaje4" name="ej4-csharp" value="csharp">
+        <label for="ej4-lenguaje4">C#</label>
+
+        <br><br>
+        <p>Disponibilidad:</p>
+        <input type="radio" id="ej4-disponibilidadmanana" name="ej4-disponibilidad" value="manana">
+        <label for="ej4-disponibilidadmanana">Mañana</label>
+
+        <br><br>
+        <input type="radio" id="ej4-disponibilidadtarde" name="ej4-disponibilidad" value="tarde">
+        <label for="ej4-disponibilidadtarde">Tarde</label>
+
+        <br><br>
+        <label for="ej4-experiencia">Experiencia:</label>
+        <br><br>
+        <textarea id="ej4-experiencia" name="ej4-experiencia" rows="4" cols="50"></textarea>
+
+        <br><br>
+        <label for="ej4-documentacion">Documentación adjunta (PDF):</label>
+        <input type="file" id="ej4-documentacion" name="ej4-documentacion" accept=".pdf">
+    
+        <br><br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+    </form>
+
+    <br><br>
+    <hr>
+    <a name="formulario5"></a>
+    <h1>Ejercicio 5. Buscadores (intermedio)</h1>
+    <p>Replicar el formulario de la imagen usando HTML. Dotar de funcionalidad a los botones para que efectúen una búsqueda efectiva en sendos buscadores</p>
+    <p>NOTA: En el caso de Google, el action del formulario es el siguiente: "&lt;FORM method=GET action="http://www.google.com/search"&gt;". Imprescindible que el atributo <code>name</code> del input sea "q".</p>    
+    <!-- si no se usa el simbolo, cree que es una etiqueta -->
+    <h2>Buscador de Google</h2>
+    <form id="ej5-google" action="https://www.google.com/search" method="get" target="_blank"> <!-- blank para que no haya que volver para atras -->
+        <label for="ej5-google-input"><img src="imagenes/google-icon.png" alt="Google" width="200" align="middle"></label>
+        <input type="text" id="ej5-google-input" name="q">
+        <button type="submit">Búsqueda Google</button>
+    </form>
+    
+    <br><br>
+    <h2>Buscador de Bing</h2>
+    <form id="ej5-bing" action="https://www.bing.com/search" method="get" target="_blank">
+        <label for="ej5-bing-input"><img src="imagenes/bing-icon.svg" alt="Bing" width="200" align="middle"></label>
+        <input type="text" id="ej5-bing-input" name="q">
+        <button type="submit">Búsqueda Bing</button>
+    </form>
+
+    <br><br>
+    <a href="#inicio">Volver al índice</a>
+</body>
+</html>

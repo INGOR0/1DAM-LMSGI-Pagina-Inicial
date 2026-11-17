@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidencias 1</title>
+</head>
+<body>
+    <!-- 
+        <h1>Ejercicio final. Gestion de incidencias informáticas (avanzado)</h1>
+        <p>Desarrolla incidencias.html para que los empleados comuniquen incidencias.</p>
+        <ol type="A">
+            <li>) Empleado: nombre, apellidos, DNI, correo corporativo, departamento y teléfono. </li>
+            <li>) Incidencia: fecha, hora, tipo (hardware, software, red, seguridad u otros), prioridad (baja, media, alta, crítica) y sistema operativo.</li>
+            <li>) Descripción: título, descripción detallada, pasos realizados y captura adjunta.</li>
+            <li>) Información adicional: si impide trabajar, si afecta a compañeros y aceptación de condiciones.</li>
+        </ol>
+        <p>Requisitos: estructura HTML5, al menos 4 fieldset, cinco tipos diferentes de input, select, textarea, checkbox, radio, required, minlength, maxlength y pattern cuando corresonda, method POST, action, botones de envío y limpieza. No utilizar CSS.</p>
+        <p>El ejercicio se dividirá en dos formularios. Formulario1 (Apartado A). Formulario2 (Apartado B, C y D). Se pasará del formulario uno al dos mediante un botón que tendrá la imagen de una flecha hacia la derecha. Cada formulario tendrá también un botón de reset que será una imagen.</p>
+    -->
+    <h1>Formulario 1</h1>
+    <form id="form-empleado" method="POST" action="">
+        <fieldset>
+           <legend>Empleado</legend>
+           
+           <label for="nombre">Nombre:</label>
+           <input type="text" id="nombre" name="nombre" minlength="2" maxlength="50" required>
+
+           <br><br>
+           <label for="apellidos">Apellidos:</label>
+           <input type="text" id="apellidos" name="apellidos" minlength="2" maxlength="50" required>
+
+           <br><br>
+           <label for="DNI">DNI:</label>
+           <input type="text" id="DNI" name="DNI" pattern="[0-9]{8}[A-Za-z]{1}" required>
+
+           <br><br>
+           <label for="email">Correo corporativo:</label>
+           <input type="email" id="email" name="email" required>
+
+           <br><br>
+           <label for="departamento">Departamento:</label>
+           <input type="text" id="departamento" name="departamento" minlength="2" maxlength="50" required>
+
+           <br><br>
+           <label for="telefono">Teléfono:</label>
+           <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
+        </fieldset>
+
+        <br><br>
+        <button type="submit" id="submit"><img src="imagenes/enviar.png" alt="Enviar" width="100"></button>
+        <button type="reset"><img src="imagenes/limpiar.png" alt="Limpiar" width="100"></button>
+        <button type="button" id="siguiente"><img src="imagenes/flecha-derecha.png" alt="Siguiente formulario" width="100"></button>
+    </form>
+
+    <script>
+        const botonSiguiente = document.getElementById("siguiente");
+        const botonSubmit= document.getElementById("submit");
+
+        botonSiguiente.addEventListener("click", function() {
+            window.location.href = "incidencias2.html";
+        });
+
+        /* SOLUCIÓNES MÁS MODERNA 
+        botonSiguiente.addEventListener("click", () => window.location.href= "incidencias2.html"; )
+        botonSubimt.addEventListener("submit", (e) => e.preventDefault; */
+    </script>
+</body>
+</html>

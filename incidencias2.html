@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidencias 2</title>
+</head>
+<body>
+    <h1>Formulario 2</h1>
+    <form id="form-incidencia" method="POST" action="">
+        <fieldset>
+            <legend>Incidencia</legend>
+            
+            <label for="fecha">Fecha:</label>
+            <input id="fecha" name="fecha" type="date" required>
+
+            <br><br>
+            <label for="hora">Hora:</label>
+            <input id="hora" name="hora" type="time" required>
+
+            <br><br>
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="">Escoge una opción</option>
+                <option value="hardware">Hardware</option>
+                <option value="software">Software</option>
+                <option value="red">Red</option>
+                <option value="seguridad">Seguridad</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <br><br>
+            <label for="prioridad">Prioridad:</label>
+            <select id="prioridad" name="prioridad" required>
+                <option value="">Escoge una opción</option>
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+                <option value="critica">Crítica</option>
+            </select>
+
+            <br><br>
+            <p>Sistema operativo (se puede dejar en blanco):</p>
+            <input type="radio" id="windows" name="os" value="windows">
+            <label for="windows">Windows</label>
+            <br><br>
+            <input type="radio" id="mac" name="os" value="mac">
+            <label for="mac">Mac</label>
+            <br><br>
+            <input type="radio" id="linux" name="os" value="linux">
+            <label for="linux">Linux</label>
+            <br><br>
+            <input type="radio" id="os-otro" name="os" value="otro">
+            <label for="os-otro">Otro</label>
+        </fieldset>
+
+        <br><br>
+        <fieldset>
+            <legend>Descripción</legend>
+
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" minlength="2" maxlength="25" required>
+
+            <br><br>
+            <label for="descripcion">Descripción detallada:</label>
+            <br><br>
+            <textarea id="descripcion" name="descripcion" cols="50" rows="4"></textarea>
+
+            <br><br>
+            <p>Pasos realizados:</p>
+            <input type="checkbox" id="reiniciar-app" name="reiniciar_app">
+            <label for="reiniciar-app">Reiniciar aplicación</label>
+
+            <br><br>
+            <input type="checkbox" id="reinciar-equipo" name="reinciar_equipo">
+            <label for="reinciar-equipo">Reiniciar equipo</label>
+
+            <br><br>
+            <input type="checkbox" id="comprobar-conexion" name="comprobar_conexion">
+            <label for="comprobar-conexion">Comprobar conexión a internet</label>
+
+            <br><br>
+            <input type="checkbox" id="actualizar-sistema" name="actualizar_sistema">
+            <label for="actualizar-sistema">Actualizar sistema o software</label>
+
+            <br><br>
+            <label for="captura">Captura de pantalla:</label>
+            <input type="file" id="captura" name="captura" accept=".png, .jpg, .jpeg, .webp">
+        </fieldset>
+
+
+        <br><br>
+        <fieldset>
+            <legend>Información adicional</legend>
+
+            <input type="checkbox" id="impide-trabajar" name="impide_trabajar">
+            <label for="impide-trabajar">Impide trabajar</label>
+
+            <br><br>
+            <input type="checkbox" id="afecta-companeros" name="afecta_companeros">
+            <label for="afecta-companeros">Afecta a compañeros</label>
+
+            <br><br>
+            <input type="checkbox" id="acepta-condiciones" name="acepta_condiciones" required>
+            <label for="acepta-condiciones">Doy mi visto bueno a las reglas del servicio y confirmo que todo lo aquí escrito es correcto</label>
+        </fieldset>
+
+        <br><br>
+        <button type="submit"><img src="imagenes/enviar.png" alt="Enviar" width="100"></button>
+        <button type="reset"><img src="imagenes/limpiar.png" alt="Limpiar" width="100"></button>
+    </form>
+</body>
+</html>
